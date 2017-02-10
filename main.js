@@ -22,11 +22,12 @@ openpgp.generateKey(options).then(function(key) {
   options = {
     data: 'Hello, World!',                             // input as String (or Uint8Array)
     publicKeys: openpgp.key.readArmored(pubkey).keys,  // for encryption
-    privateKeys: openpgp.key.readArmored(privkey).keys // for signing (optional)
+    //privateKeys: openpgp.key.readArmored(privkey).keys // for signing (optional)
   };
 
   openpgp.encrypt(options).then(function(ciphertext) {
     encrypted = ciphertext.data; // '-----BEGIN PGP MESSAGE ... END PGP MESSAGE-----'
+    console.log(encrypted);
   },
   function (error) {
     console.log(error);
