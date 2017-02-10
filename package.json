@@ -1,0 +1,14 @@
+{
+  "name": "openpgpjs_cr_test",
+  "version": "0.0.0",
+  "description": "a simple openpgp test",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openpgp": "^2.3.6"
+  }
+}
