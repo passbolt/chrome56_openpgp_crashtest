@@ -1,16 +1,15 @@
-// use as CommonJS, AMD, ES6 module or via window.openpgp
-
+/**
+ * Parsing loop issue
+ */
 var openpgp = require('openpgp');
-openpgp.config.use_native = true;
+openpgp.config.use_native = false;
 
 // set the relative web worker path
 openpgp.initWorker({ path:'lib/openpgp.worker.js' });
 openpgp.config.aead_protect = true; // activate fast AES-GCM mode (not yet OpenPGP standard)
 
-/**
- * Generate key
- */
-var key = `-----BEGIN PGP PUBLIC KEY BLOCK-----
+for (i=0; i < 20; i++) {
+  var key = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: OpenPGP.js v2.3.2
 Comment: http://openpgpjs.org
 
@@ -41,9 +40,6 @@ GM08jLGXSJ1osGnSRi2QUS0XpgyrD3ekwyqWSw62USFRHrJpgTvKyrT0H80t9ISv
 xU08EoKQkQ/H9emrtZnqfckKGgtIKoMux71g
 =PBXL
 -----END PGP PUBLIC KEY BLOCK-----`;
-var openpgpRes = openpgp.key.readArmored(key);
-console.log(openpgpRes);
-
-var key = openpgpRes.keys[0];
-console.log(key.getExpirationTime());
-console.log(key.getPrimaryUser());
+  var openpgpRes = openpgp.key.readArmored(key);
+  console.log(openpgpRes);
+}
