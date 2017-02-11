@@ -1,7 +1,6 @@
 // use as CommonJS, AMD, ES6 module or via window.openpgp
 
 var openpgp = require('openpgp');
-openpgp.config.use_native = true;
 
 // set the relative web worker path
 openpgp.initWorker({ path:'lib/openpgp.worker.js' });
@@ -12,7 +11,7 @@ openpgp.config.aead_protect = true; // activate fast AES-GCM mode (not yet OpenP
  */
 var options = {
   userIds: [{ name:'Jon Smith', email:'jon@example.com' }], // multiple user IDs
-  numBits: 2048,                                            // RSA key size
+  numBits: 4096,                                            // RSA key size
   passphrase: 'super long and hard to guess secret'         // protects the private key
 };
 

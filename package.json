@@ -1,5 +1,5 @@
 {
-  "name": "openpgpjs_cr_test",
+  "name": "openpgpjs_minitest",
   "version": "0.0.0",
   "description": "a simple openpgp test",
   "main": "main.js",
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "openpgp": "^2.3.6"
+    "openpgp": "2.3.2"
   }
 }
